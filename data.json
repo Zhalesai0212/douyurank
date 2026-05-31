@@ -1,0 +1,808 @@
+{
+  "update_time": "2026-06-01 01:57:48",
+  "update_timestamp": 1780250268,
+  "total_streamers_scanned": 5288,
+  "top_count": 100,
+  "data": [
+    {
+      "rank": 1,
+      "nickname": "考拉一24时",
+      "category": "派对",
+      "level": 116,
+      "experience": 435209267.2,
+      "room_id": 8406760
+    },
+    {
+      "rank": 2,
+      "nickname": "Xleft小叮当",
+      "category": "热门游戏",
+      "level": 113,
+      "experience": 404188514.2,
+      "room_id": 3168536
+    },
+    {
+      "rank": 3,
+      "nickname": "白鲨AyoM",
+      "category": "穿越火线",
+      "level": 113,
+      "experience": 403208692.0,
+      "room_id": 12821
+    },
+    {
+      "rank": 4,
+      "nickname": "JT丶浩克大魔王",
+      "category": "户外",
+      "level": 113,
+      "experience": 401165300.3,
+      "room_id": 4489985
+    },
+    {
+      "rank": 5,
+      "nickname": "南波儿大魔王丶",
+      "category": "英雄联盟",
+      "level": 112,
+      "experience": 389235630.4,
+      "room_id": 5526219
+    },
+    {
+      "rank": 6,
+      "nickname": "20岁天才歌手Running",
+      "category": "热门游戏",
+      "level": 111,
+      "experience": 378591519.0,
+      "room_id": 2448877
+    },
+    {
+      "rank": 7,
+      "nickname": "玩机器丶Machine",
+      "category": "CS2",
+      "level": 111,
+      "experience": 375868763.0,
+      "room_id": 6979222
+    },
+    {
+      "rank": 8,
+      "nickname": "奇点一可口可乐",
+      "category": "派对",
+      "level": 111,
+      "experience": 373916484.2,
+      "room_id": 8799916
+    },
+    {
+      "rank": 9,
+      "nickname": "椰汁糕冬瓜强",
+      "category": "CS2",
+      "level": 110,
+      "experience": 367763904.6,
+      "room_id": 63136
+    },
+    {
+      "rank": 10,
+      "nickname": "考拉一四季如歌",
+      "category": "派对",
+      "level": 109,
+      "experience": 351270240.2,
+      "room_id": 8602722
+    },
+    {
+      "rank": 11,
+      "nickname": "洞主丨歌神洞庭湖",
+      "category": "英雄联盟",
+      "level": 109,
+      "experience": 350913175.0,
+      "room_id": 138243
+    },
+    {
+      "rank": 12,
+      "nickname": "爱约一青花瓷",
+      "category": "派对",
+      "level": 109,
+      "experience": 350267302.6,
+      "room_id": 171
+    },
+    {
+      "rank": 13,
+      "nickname": "智勋勋勋勋",
+      "category": "英雄联盟",
+      "level": 108,
+      "experience": 337058578.0,
+      "room_id": 312212
+    },
+    {
+      "rank": 14,
+      "nickname": "pigff",
+      "category": "热门游戏",
+      "level": 108,
+      "experience": 336277902.2,
+      "room_id": 24422
+    },
+    {
+      "rank": 15,
+      "nickname": "QuQu是蛐蛐",
+      "category": "CS2",
+      "level": 107,
+      "experience": 322838270.8,
+      "room_id": 178432
+    },
+    {
+      "rank": 16,
+      "nickname": "YH一爱神降临",
+      "category": "派对",
+      "level": 106,
+      "experience": 319348686.4,
+      "room_id": 13
+    },
+    {
+      "rank": 17,
+      "nickname": "考拉一日月",
+      "category": "派对",
+      "level": 106,
+      "experience": 316740116.2,
+      "room_id": 8391738
+    },
+    {
+      "rank": 18,
+      "nickname": "成都55张",
+      "category": "星秀",
+      "level": 106,
+      "experience": 315050936.0,
+      "room_id": 4386404
+    },
+    {
+      "rank": 19,
+      "nickname": "星梦阁九州胖胖冠",
+      "category": "派对",
+      "level": 106,
+      "experience": 312065162.89,
+      "room_id": 10799022
+    },
+    {
+      "rank": 20,
+      "nickname": "十二月老铁",
+      "category": "星秀",
+      "level": 105,
+      "experience": 305809738.6,
+      "room_id": 3866447
+    },
+    {
+      "rank": 21,
+      "nickname": "ANJONI小玖",
+      "category": "星秀",
+      "level": 105,
+      "experience": 305611139.2,
+      "room_id": 6266000
+    },
+    {
+      "rank": 22,
+      "nickname": "scboy",
+      "category": "DOTA2",
+      "level": 105,
+      "experience": 296944911.2,
+      "room_id": 3484
+    },
+    {
+      "rank": 23,
+      "nickname": "二呆啾",
+      "category": "二次元",
+      "level": 104,
+      "experience": 294383427.4,
+      "room_id": 5092355
+    },
+    {
+      "rank": 24,
+      "nickname": "靓旭",
+      "category": "欢乐麻将",
+      "level": 104,
+      "experience": 293464199.6,
+      "room_id": 1165924
+    },
+    {
+      "rank": 25,
+      "nickname": "石页的第一根矛s",
+      "category": "英雄联盟",
+      "level": 104,
+      "experience": 292330303.2,
+      "room_id": 593392
+    },
+    {
+      "rank": 26,
+      "nickname": "Zhou陈尧",
+      "category": "DOTA2",
+      "level": 104,
+      "experience": 287142638.0,
+      "room_id": 88660
+    },
+    {
+      "rank": 27,
+      "nickname": "YAQ一再难遇我点唱厅",
+      "category": "派对",
+      "level": 104,
+      "experience": 286269909.0,
+      "room_id": 818
+    },
+    {
+      "rank": 28,
+      "nickname": "电棍",
+      "category": "英雄联盟",
+      "level": 104,
+      "experience": 286128679.2,
+      "room_id": 12306
+    },
+    {
+      "rank": 29,
+      "nickname": "疯奶丶大硕",
+      "category": "DNF",
+      "level": 104,
+      "experience": 284270847.0,
+      "room_id": 5324055
+    },
+    {
+      "rank": 30,
+      "nickname": "宁波小骚骚0oO",
+      "category": "户外",
+      "level": 103,
+      "experience": 282645425.0,
+      "room_id": 796449
+    },
+    {
+      "rank": 31,
+      "nickname": "Skr丶大伟伟",
+      "category": "星秀",
+      "level": 103,
+      "experience": 280090087.4,
+      "room_id": 4125556
+    },
+    {
+      "rank": 32,
+      "nickname": "龙四爷攻略组",
+      "category": "二次元游戏",
+      "level": 103,
+      "experience": 280054984.0,
+      "room_id": 479079
+    },
+    {
+      "rank": 33,
+      "nickname": "紫薇同学",
+      "category": "星秀",
+      "level": 103,
+      "experience": 278870104.4,
+      "room_id": 7009686
+    },
+    {
+      "rank": 34,
+      "nickname": "小鱼小鱼吃虾米",
+      "category": "户外",
+      "level": 103,
+      "experience": 278431905.8,
+      "room_id": 2158798
+    },
+    {
+      "rank": 35,
+      "nickname": "艺瑟妃",
+      "category": "星秀",
+      "level": 103,
+      "experience": 274597043.0,
+      "room_id": 6999879
+    },
+    {
+      "rank": 36,
+      "nickname": "Nostalie",
+      "category": "炉石传说",
+      "level": 103,
+      "experience": 273926901.0,
+      "room_id": 142488
+    },
+    {
+      "rank": 37,
+      "nickname": "尤优Baby",
+      "category": "二次元",
+      "level": 103,
+      "experience": 272605007.6,
+      "room_id": 1769784
+    },
+    {
+      "rank": 38,
+      "nickname": "wtybill",
+      "category": "炉石传说",
+      "level": 102,
+      "experience": 264674327.4,
+      "room_id": 57321
+    },
+    {
+      "rank": 39,
+      "nickname": "王拉奇",
+      "category": "主机其他游戏",
+      "level": 102,
+      "experience": 264555866.4,
+      "room_id": 11144156
+    },
+    {
+      "rank": 40,
+      "nickname": "大Mu金仙丶",
+      "category": "DOTA2",
+      "level": 102,
+      "experience": 262635966.0,
+      "room_id": 1870001
+    },
+    {
+      "rank": 41,
+      "nickname": "百变姑姑肖淑洁",
+      "category": "户外",
+      "level": 101,
+      "experience": 259357471.6,
+      "room_id": 594613
+    },
+    {
+      "rank": 42,
+      "nickname": "卡司一明月",
+      "category": "派对",
+      "level": 101,
+      "experience": 258788727.4,
+      "room_id": 10939764
+    },
+    {
+      "rank": 43,
+      "nickname": "官派丨两情相悦",
+      "category": "一起玩",
+      "level": 101,
+      "experience": 257883169.0,
+      "room_id": 8514651
+    },
+    {
+      "rank": 44,
+      "nickname": "叶音符",
+      "category": "英雄联盟",
+      "level": 101,
+      "experience": 257008577.6,
+      "room_id": 12313
+    },
+    {
+      "rank": 45,
+      "nickname": "格局OoO",
+      "category": "英雄联盟",
+      "level": 101,
+      "experience": 256916975.8,
+      "room_id": 787747
+    },
+    {
+      "rank": 46,
+      "nickname": "18yearsold天残少年K9",
+      "category": "DOTA2",
+      "level": 101,
+      "experience": 254673687.4,
+      "room_id": 235520
+    },
+    {
+      "rank": 47,
+      "nickname": "邦Sa",
+      "category": "热门游戏",
+      "level": 101,
+      "experience": 253876259.0,
+      "room_id": 5720533
+    },
+    {
+      "rank": 48,
+      "nickname": "雅典娜是Athena丷",
+      "category": "星秀",
+      "level": 101,
+      "experience": 253714796.2,
+      "room_id": 4037229
+    },
+    {
+      "rank": 49,
+      "nickname": "爱约一爱约之夏",
+      "category": "派对",
+      "level": 101,
+      "experience": 253520908.4,
+      "room_id": 7560043
+    },
+    {
+      "rank": 50,
+      "nickname": "小儿郎丶丶",
+      "category": "梦幻手游",
+      "level": 101,
+      "experience": 251661457.8,
+      "room_id": 221869
+    },
+    {
+      "rank": 51,
+      "nickname": "朴雨彬",
+      "category": "星秀",
+      "level": 101,
+      "experience": 250077416.6,
+      "room_id": 7930707
+    },
+    {
+      "rank": 52,
+      "nickname": "孙紫涵丶",
+      "category": "才艺",
+      "level": 101,
+      "experience": 248304482.2,
+      "room_id": 6282878
+    },
+    {
+      "rank": 53,
+      "nickname": "贝拉小姐姐",
+      "category": "二次元",
+      "level": 100,
+      "experience": 245049773.38,
+      "room_id": 3276456
+    },
+    {
+      "rank": 54,
+      "nickname": "小梨梨Lily",
+      "category": "星秀",
+      "level": 100,
+      "experience": 244939438.19,
+      "room_id": 9742633
+    },
+    {
+      "rank": 55,
+      "nickname": "官派丨一见钟情",
+      "category": "一起玩",
+      "level": 100,
+      "experience": 244024997.56,
+      "room_id": 3828157
+    },
+    {
+      "rank": 56,
+      "nickname": "大嘴love",
+      "category": "户外",
+      "level": 100,
+      "experience": 241667352.58,
+      "room_id": 6561377
+    },
+    {
+      "rank": 57,
+      "nickname": "diyy刘頔",
+      "category": "CS2",
+      "level": 100,
+      "experience": 239798293.4,
+      "room_id": 231059
+    },
+    {
+      "rank": 58,
+      "nickname": "菜刀三国杀",
+      "category": "三国杀",
+      "level": 99,
+      "experience": 233490172.84,
+      "room_id": 160504
+    },
+    {
+      "rank": 59,
+      "nickname": "MQ丶蜘蛛馍",
+      "category": "英雄联盟",
+      "level": 99,
+      "experience": 230019364.86,
+      "room_id": 226037
+    },
+    {
+      "rank": 60,
+      "nickname": "山东棋王弈哥",
+      "category": "lol云顶之弈",
+      "level": 99,
+      "experience": 229286301.7,
+      "room_id": 844947
+    },
+    {
+      "rank": 61,
+      "nickname": "刘喵喵喵丶",
+      "category": "星秀",
+      "level": 99,
+      "experience": 227192165.79,
+      "room_id": 2165978
+    },
+    {
+      "rank": 62,
+      "nickname": "王大谋QoQ",
+      "category": "主机其他游戏",
+      "level": 99,
+      "experience": 225280515.19,
+      "room_id": 9990298
+    },
+    {
+      "rank": 63,
+      "nickname": "爱吃鱼的石原",
+      "category": "火影忍者",
+      "level": 99,
+      "experience": 225064447.78,
+      "room_id": 921393
+    },
+    {
+      "rank": 64,
+      "nickname": "斯祥丶",
+      "category": "热门游戏",
+      "level": 99,
+      "experience": 223954846.8,
+      "room_id": 2311698
+    },
+    {
+      "rank": 65,
+      "nickname": "念儿o",
+      "category": "星秀",
+      "level": 98,
+      "experience": 222450060.5,
+      "room_id": 6681257
+    },
+    {
+      "rank": 66,
+      "nickname": "阿涛皎月Carry",
+      "category": "lol云顶之弈",
+      "level": 98,
+      "experience": 220945015.27,
+      "room_id": 6560603
+    },
+    {
+      "rank": 67,
+      "nickname": "落叶听松",
+      "category": "剑网3",
+      "level": 98,
+      "experience": 220409911.92,
+      "room_id": 593061
+    },
+    {
+      "rank": 68,
+      "nickname": "是茵妹妹呀",
+      "category": "户外",
+      "level": 98,
+      "experience": 220186661.37,
+      "room_id": 8825162
+    },
+    {
+      "rank": 69,
+      "nickname": "点唱一余音",
+      "category": "派对",
+      "level": 98,
+      "experience": 219010968.21,
+      "room_id": 5992344
+    },
+    {
+      "rank": 70,
+      "nickname": "As童话话话",
+      "category": "剑网3",
+      "level": 98,
+      "experience": 218925258.5,
+      "room_id": 528353
+    },
+    {
+      "rank": 71,
+      "nickname": "主播油条",
+      "category": "英雄联盟",
+      "level": 98,
+      "experience": 218134431.78,
+      "room_id": 56040
+    },
+    {
+      "rank": 72,
+      "nickname": "小溫dududu",
+      "category": "热门游戏",
+      "level": 98,
+      "experience": 216520967.7,
+      "room_id": 10188624
+    },
+    {
+      "rank": 73,
+      "nickname": "DMC葡萄鹏",
+      "category": "魔兽怀旧服",
+      "level": 98,
+      "experience": 214583441.6,
+      "room_id": 80887
+    },
+    {
+      "rank": 74,
+      "nickname": "进击的神乐",
+      "category": "lol云顶之弈",
+      "level": 98,
+      "experience": 213144601.5,
+      "room_id": 85894
+    },
+    {
+      "rank": 75,
+      "nickname": "丶才孑",
+      "category": "DNF",
+      "level": 98,
+      "experience": 212818541.5,
+      "room_id": 5518350
+    },
+    {
+      "rank": 76,
+      "nickname": "骚易丶",
+      "category": "王者荣耀",
+      "level": 97,
+      "experience": 210002043.0,
+      "room_id": 2207607
+    },
+    {
+      "rank": 77,
+      "nickname": "三酒OuO",
+      "category": "主机其他游戏",
+      "level": 97,
+      "experience": 205564055.66,
+      "room_id": 2421040
+    },
+    {
+      "rank": 78,
+      "nickname": "鱼玥一人间香奈儿",
+      "category": "派对",
+      "level": 97,
+      "experience": 204674452.84,
+      "room_id": 10238788
+    },
+    {
+      "rank": 79,
+      "nickname": "loveyou_qq",
+      "category": "CS2",
+      "level": 97,
+      "experience": 204667579.8,
+      "room_id": 52319
+    },
+    {
+      "rank": 80,
+      "nickname": "ice秋风",
+      "category": "火影忍者",
+      "level": 97,
+      "experience": 204399201.6,
+      "room_id": 535534
+    },
+    {
+      "rank": 81,
+      "nickname": "恰饭丶DZZ",
+      "category": "金铲铲之战",
+      "level": 97,
+      "experience": 204354317.24,
+      "room_id": 309763
+    },
+    {
+      "rank": 82,
+      "nickname": "燕徊硯",
+      "category": "天涯明月刀",
+      "level": 97,
+      "experience": 201090437.62,
+      "room_id": 6517467
+    },
+    {
+      "rank": 83,
+      "nickname": "英雄吕布",
+      "category": "暗黑破坏神",
+      "level": 97,
+      "experience": 200701893.52,
+      "room_id": 2106575
+    },
+    {
+      "rank": 84,
+      "nickname": "YAQ一再遇佳人",
+      "category": "派对",
+      "level": 96,
+      "experience": 199419945.22,
+      "room_id": 7892580
+    },
+    {
+      "rank": 85,
+      "nickname": "Present欣",
+      "category": "星秀",
+      "level": 96,
+      "experience": 198777583.39,
+      "room_id": 6524108
+    },
+    {
+      "rank": 86,
+      "nickname": "尖尖同学Zzz",
+      "category": "星秀",
+      "level": 96,
+      "experience": 193855744.26,
+      "room_id": 457200
+    },
+    {
+      "rank": 87,
+      "nickname": "王羽杉abc",
+      "category": "星秀",
+      "level": 95,
+      "experience": 186371300.31,
+      "room_id": 1010383
+    },
+    {
+      "rank": 88,
+      "nickname": "小冉冉y",
+      "category": "星秀",
+      "level": 95,
+      "experience": 183792174.16,
+      "room_id": 10060909
+    },
+    {
+      "rank": 89,
+      "nickname": "余初九",
+      "category": "主机其他游戏",
+      "level": 95,
+      "experience": 182871927.12,
+      "room_id": 8955262
+    },
+    {
+      "rank": 90,
+      "nickname": "林芊又",
+      "category": "星秀",
+      "level": 95,
+      "experience": 181713923.07,
+      "room_id": 5012670
+    },
+    {
+      "rank": 91,
+      "nickname": "Q覃小七",
+      "category": "星秀",
+      "level": 95,
+      "experience": 178829309.16,
+      "room_id": 5964044
+    },
+    {
+      "rank": 92,
+      "nickname": "苏阿灿户外",
+      "category": "户外",
+      "level": 95,
+      "experience": 178341499.28,
+      "room_id": 3903192
+    },
+    {
+      "rank": 93,
+      "nickname": "九妹笑笑",
+      "category": "天天象棋",
+      "level": 95,
+      "experience": 177779877.83,
+      "room_id": 6264482
+    },
+    {
+      "rank": 94,
+      "nickname": "穿越火线运营团队",
+      "category": "穿越火线",
+      "level": 95,
+      "experience": 177193089.92,
+      "room_id": 605964
+    },
+    {
+      "rank": 95,
+      "nickname": "Thea柒清",
+      "category": "星秀",
+      "level": 95,
+      "experience": 177103342.72,
+      "room_id": 7750351
+    },
+    {
+      "rank": 96,
+      "nickname": "白白的胖胖呀",
+      "category": "马里奥制造",
+      "level": 94,
+      "experience": 175083729.24,
+      "room_id": 501761
+    },
+    {
+      "rank": 97,
+      "nickname": "皇宫扫地僧",
+      "category": "梦幻西游",
+      "level": 94,
+      "experience": 171263733.44,
+      "room_id": 8523981
+    },
+    {
+      "rank": 98,
+      "nickname": "石小蓉",
+      "category": "星秀",
+      "level": 94,
+      "experience": 168652234.2,
+      "room_id": 717613
+    },
+    {
+      "rank": 99,
+      "nickname": "潇潇【南波家族】",
+      "category": "金铲铲之战",
+      "level": 94,
+      "experience": 168238458.22,
+      "room_id": 9495657
+    },
+    {
+      "rank": 100,
+      "nickname": "大琳dalin呀",
+      "category": "户外",
+      "level": 94,
+      "experience": 167712252.22,
+      "room_id": 1965453
+    }
+  ]
+}

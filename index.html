@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斗鱼主播等级排行榜 Top 100</title>
+    <style>
+        /* ============================================================
+           全局样式
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: #0a0a1a;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        /* 背景动画 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(255, 120, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 60%, rgba(0, 180, 255, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(255, 80, 120, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ============================================================
+           头部
+           ============================================================ */
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 36px 20px 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6a00, #ee0979, #ff6a00);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+            letter-spacing: 2px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        header .subtitle {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        header .update-time {
+            margin-top: 4px;
+            font-size: 0.78rem;
+            color: #666;
+        }
+
+        /* ============================================================
+           主容器
+           ============================================================ */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 8px 48px;
+        }
+
+        /* ============================================================
+           表格
+           ============================================================ */
+        .table-wrapper {
+            background: rgba(20, 20, 40, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        thead th {
+            position: sticky;
+            top: 0;
+            background: rgba(30, 30, 60, 0.95);
+            padding: 14px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aab;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        thead th:first-child { width: 60px; }
+        thead th:nth-child(2) { width: auto; text-align: left; }
+        thead th:nth-child(3) { width: 120px; }
+        thead th:nth-child(4) { width: 80px; }
+
+        tbody td {
+            padding: 11px 12px;
+            font-size: 0.92rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        tbody td:nth-child(2) {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* ============================================================
+           排名徽章
+           ============================================================ */
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .rank-1  { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; box-shadow: 0 0 16px rgba(255, 215, 0, 0.5); }
+        .rank-2  { background: linear-gradient(135deg, #c0c0c0, #8090a0); color: #000; box-shadow: 0 0 12px rgba(192, 192, 192, 0.4); }
+        .rank-3  { background: linear-gradient(135deg, #cd7f32, #a0522d); color: #fff; box-shadow: 0 0 10px rgba(205, 127, 50, 0.4); }
+        .rank-4-10  { background: rgba(255, 120, 0, 0.25); color: #ffa040; border: 1px solid rgba(255, 120, 0, 0.4); }
+        .rank-11-50 { color: #ccc; }
+        .rank-51-100 { color: #999; }
+
+        /* ============================================================
+           等级标签
+           ============================================================ */
+        .level-tag {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            background: rgba(255, 120, 0, 0.2);
+            color: #ff9040;
+            border: 1px solid rgba(255, 120, 0, 0.3);
+        }
+
+        .level-100plus {
+            background: rgba(255, 60, 60, 0.25);
+            color: #ff5050;
+            border-color: rgba(255, 60, 60, 0.5);
+            box-shadow: 0 0 8px rgba(255, 60, 60, 0.25);
+        }
+
+        .level-90plus {
+            background: rgba(200, 60, 255, 0.2);
+            color: #d060ff;
+            border-color: rgba(200, 60, 255, 0.4);
+        }
+
+        .level-80plus {
+            background: rgba(255, 180, 0, 0.2);
+            color: #ffb820;
+            border-color: rgba(255, 180, 0, 0.4);
+        }
+
+        /* ============================================================
+           页脚
+           ============================================================ */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        /* ============================================================
+           加载/错误状态
+           ============================================================ */
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .loading .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 16px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #ff6a00;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error {
+            text-align: center;
+            padding: 80px 20px;
+            color: #ff5050;
+            font-size: 1rem;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 80px 20px;
+            color: #888;
+        }
+
+        /* ============================================================
+           数据过时警告
+           ============================================================ */
+        .stale-banner {
+            display: none;
+            background: rgba(255, 180, 0, 0.12);
+            border: 1px solid rgba(255, 180, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #ffb820;
+            font-size: 0.82rem;
+        }
+
+        .stale-banner.visible { display: block; }
+
+        .stale-banner.danger {
+            background: rgba(255, 50, 50, 0.12);
+            border-color: rgba(255, 50, 50, 0.3);
+            color: #ff5050;
+        }
+
+        /* ============================================================
+           自动刷新提示
+           ============================================================ */
+        .auto-refresh {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .auto-refresh button {
+            background: rgba(255, 120, 0, 0.15);
+            color: #ff9040;
+            border: 1px solid rgba(255, 120, 0, 0.3);
+            padding: 4px 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            margin-left: 8px;
+            transition: background 0.2s;
+        }
+
+        .auto-refresh button:hover {
+            background: rgba(255, 120, 0, 0.3);
+        }
+
+        /* ============================================================
+           响应式
+           ============================================================ */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.3rem; }
+            thead th { font-size: 0.72rem; padding: 10px 6px; }
+            tbody td { font-size: 0.78rem; padding: 8px 6px; }
+            thead th:first-child { width: 36px; }
+            thead th:nth-child(3) { width: 72px; }
+            thead th:nth-child(4) { width: 56px; }
+            .rank-badge { width: 28px; height: 28px; font-size: 0.72rem; }
+            .level-tag { font-size: 0.72rem; padding: 2px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🏆 斗鱼主播等级排行榜</h1>
+    <p class="subtitle">Douyu Streamer Level Ranking — Top 100</p>
+    <p class="update-time" id="updateTime">数据加载中...</p>
+</header>
+
+<div class="container">
+    <div class="table-wrapper">
+
+        <!-- 加载中 -->
+        <div class="loading" id="loadingState">
+            <div class="spinner"></div>
+            <p>正在加载排行榜数据...</p>
+        </div>
+
+        <!-- 错误提示 -->
+        <div class="error" id="errorState" style="display:none;">
+            <p>⚠️ 数据加载失败</p>
+            <p style="margin-top:8px;font-size:0.85rem;color:#888;">
+                数据可能正在更新中，请稍后刷新页面重试
+            </p>
+        </div>
+
+        <!-- 无数据 -->
+        <div class="no-data" id="noDataState" style="display:none;">
+            <p>📭 暂无数据</p>
+        </div>
+
+        <!-- 数据过时警告 -->
+        <div class="stale-banner" id="staleBanner">
+            ⚡ 数据已超过 <span id="staleHours"></span> 小时未更新，排名可能已变化
+        </div>
+
+        <!-- 排行榜表格 -->
+        <table id="rankTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>主播名称</th>
+                    <th>分区</th>
+                    <th>等级</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+    </div>
+</div>
+
+<footer>
+    <p>数据来源: www.douyu.com | 仅用于学习研究</p>
+    <div class="auto-refresh">
+        页面每 5 分钟自动刷新
+        <button id="refreshBtn" onclick="location.reload()">🔄 立即刷新</button>
+    </div>
+</footer>
+
+<script>
+// ============================================================
+// 主逻辑
+// ============================================================
+(function() {
+    'use strict';
+
+    const loadingEl = document.getElementById('loadingState');
+    const errorEl = document.getElementById('errorState');
+    const noDataEl = document.getElementById('noDataState');
+    const tableEl = document.getElementById('rankTable');
+    const tbodyEl = document.getElementById('tableBody');
+    const updateTimeEl = document.getElementById('updateTime');
+    const staleBanner = document.getElementById('staleBanner');
+    const staleHours = document.getElementById('staleHours');
+
+    /** Max acceptable data age in hours before showing warning */
+    var STALE_WARN_HOURS = 2;
+    var STALE_DANGER_HOURS = 6;
+    var AUTO_REFRESH_MINUTES = 5;
+
+    /**
+     * 获取排名徽章的 CSS class
+     */
+    function getRankClass(rank) {
+        if (rank === 1) return 'rank-1';
+        if (rank === 2) return 'rank-2';
+        if (rank === 3) return 'rank-3';
+        if (rank <= 10) return 'rank-4-10';
+        if (rank <= 50) return 'rank-11-50';
+        return 'rank-51-100';
+    }
+
+    /**
+     * 获取等级标签的 CSS class
+     */
+    function getLevelClass(level) {
+        if (level >= 100) return 'level-100plus';
+        if (level >= 90) return 'level-90plus';
+        if (level >= 80) return 'level-80plus';
+        return '';
+    }
+
+    /**
+     * HTML 转义，防止 XSS
+     */
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+
+    /**
+     * 渲染表格
+     */
+    function renderTable(data) {
+        tbodyEl.innerHTML = '';
+
+        data.forEach(function(item) {
+            const tr = document.createElement('tr');
+
+            // 排名
+            const tdRank = document.createElement('td');
+            const rankBadge = document.createElement('span');
+            rankBadge.className = 'rank-badge ' + getRankClass(item.rank);
+            rankBadge.textContent = '#' + item.rank;
+            tdRank.appendChild(rankBadge);
+            tr.appendChild(tdRank);
+
+            // 主播名称
+            const tdName = document.createElement('td');
+            tdName.textContent = item.nickname;
+            tdName.title = '房间号: ' + item.room_id;
+            tr.appendChild(tdName);
+
+            // 分区
+            const tdCat = document.createElement('td');
+            tdCat.textContent = item.category || '未知';
+            tr.appendChild(tdCat);
+
+            // 等级
+            const tdLevel = document.createElement('td');
+            const levelTag = document.createElement('span');
+            levelTag.className = 'level-tag ' + getLevelClass(item.level);
+            levelTag.textContent = 'Lv.' + item.level;
+            tdLevel.appendChild(levelTag);
+            tr.appendChild(tdLevel);
+
+            tbodyEl.appendChild(tr);
+        });
+
+        // 显示表格，隐藏加载
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'none';
+        noDataEl.style.display = 'none';
+        tableEl.style.display = '';
+    }
+
+    /**
+     * 显示加载状态
+     */
+    function showLoading() {
+        loadingEl.style.display = '';
+        errorEl.style.display = 'none';
+        noDataEl.style.display = 'none';
+        tableEl.style.display = 'none';
+    }
+
+    /**
+     * 显示错误
+     */
+    function showError() {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = '';
+        noDataEl.style.display = 'none';
+        tableEl.style.display = 'none';
+    }
+
+    /**
+     * 显示无数据
+     */
+    function showNoData() {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'none';
+        noDataEl.style.display = '';
+        tableEl.style.display = 'none';
+    }
+
+    /**
+     * 检查数据新鲜度，显示过时警告
+     */
+    function checkDataFreshness(updateTimestamp) {
+        var updateTime;
+        if (typeof updateTimestamp === 'number') {
+            updateTime = new Date(updateTimestamp * 1000);
+        } else {
+            updateTime = new Date(updateTimestamp.replace(/-/g, '/'));
+        }
+
+        if (isNaN(updateTime.getTime())) return;
+
+        var now = new Date();
+        var diffMs = now - updateTime;
+        var diffHours = diffMs / (1000 * 60 * 60);
+
+        if (diffHours >= STALE_WARN_HOURS) {
+            staleHours.textContent = Math.round(diffHours);
+            staleBanner.classList.add('visible');
+            if (diffHours >= STALE_DANGER_HOURS) {
+                staleBanner.classList.add('danger');
+            } else {
+                staleBanner.classList.remove('danger');
+            }
+        }
+    }
+
+    /**
+     * 加载并渲染数据
+     */
+    function loadData() {
+        showLoading();
+
+        fetch('data.json?t=' + Date.now())
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+                return response.json();
+            })
+            .then(function(json) {
+                if (!json.data || !Array.isArray(json.data) || json.data.length === 0) {
+                    showNoData();
+                    return;
+                }
+
+                // 更新时间
+                if (json.update_time) {
+                    updateTimeEl.textContent = '数据更新时间: ' + json.update_time;
+                    checkDataFreshness(json.update_timestamp || json.update_time);
+                }
+
+                // 按等级降序排序 (确保数据顺序正确)
+                json.data.sort(function(a, b) {
+                    if (b.level !== a.level) return b.level - a.level;
+                    return b.experience - a.experience;
+                });
+
+                // 重新分配排名
+                json.data.forEach(function(item, idx) {
+                    item.rank = idx + 1;
+                });
+
+                renderTable(json.data);
+            })
+            .catch(function(err) {
+                console.error('加载 data.json 失败:', err);
+                // 检测是否为 file:// 协议导致的 CORS 错误
+                if (window.location.protocol === 'file:') {
+                    errorEl.innerHTML = '<p>⚠️ 无法在文件模式下加载数据</p>' +
+                        '<p style="margin-top:8px;font-size:0.85rem;color:#888;">' +
+                        '浏览器安全策略禁止 file:// 协议下读取本地文件。<br>' +
+                        '请使用本地服务器打开：<br>' +
+                        '<code style="background:rgba(255,255,255,0.05);padding:4px 12px;border-radius:4px;display:inline-block;margin-top:8px;">' +
+                        'python -m http.server 8080</code><br>' +
+                        '<span style="font-size:0.75rem;">然后访问 http://localhost:8080</span></p>';
+                }
+                showError();
+            });
+    }
+
+    // 页面加载完成后执行
+    loadData();
+
+    // 定时自动刷新
+    setInterval(function() {
+        loadData();
+    }, AUTO_REFRESH_MINUTES * 60 * 1000);
+})();
+</script>
+
+</body>
+</html>
