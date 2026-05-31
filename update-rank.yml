@@ -1,0 +1,77 @@
+name: Update Douyu Streamer Rank
+
+on:
+  schedule:
+    # 每 15 分钟更新一次 (UTC时间，避开整点高峰)
+    - cron: '7,22,37,52 * * * *'
+  # 允许手动触发
+  workflow_dispatch:
+  # 推送到 main 分支时也触发（用于首次部署验证）
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'scraper.py'
+
+# 确保同一时间只有一个实例在运行
+concurrency:
+  group: douyu-rank-update
+  cancel-in-progress: false
+
+jobs:
+  update-rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper (CI mode)
+        id: scraper
+        run: python scraper.py --ci
+        continue-on-error: true
+
+      - name: Check data.json exists
+        id: check
+        run: |
+          if [ -f data.json ]; then
+            echo "data_ok=true" >> $GITHUB_OUTPUT
+            echo "Data file size: $(wc -c < data.json) bytes"
+            echo "Entries: $(python -c "import json; d=json.load(open('data.json')); print(len(d.get('data',[])))")"
+          else
+            echo "data_ok=false" >> $GITHUB_OUTPUT
+            echo "WARNING: data.json not found"
+          fi
+
+      - name: Commit and push updated data
+        if: steps.check.outputs.data_ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json scraper.log || true
+          if git diff --staged --quiet; then
+            echo "No changes to data.json, skipping commit"
+          else
+            git commit -m "[auto] update rank data $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+            echo "Committed and pushed updated data.json"
+          fi
